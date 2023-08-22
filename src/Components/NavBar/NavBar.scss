@@ -1,0 +1,167 @@
+:root{
+    --PrimaryColor:hsl(179, 99%, 33%);
+    --SecondaryColor:hsl(180, 85%, 55%);
+    --gradientColor:linear-gradient(to right,hsl(180, 85%, 55%),hsl(179, 99%, 33%));
+    --whiteColor:hsl(0,0%,100%);
+    --blackColor:hsl(200, 75%, 2%);
+    --textColor:hsl(240,4%,36%);
+    --whiteColorDeam:hsl(0, 0%, 90%);
+    --greyText:rgb(190,190,190);
+    --inputColor:rgb(218, 217, 217);
+    --bodyColor:rgb(243,243,243);
+    --cardBG:rgb(225,225,235);
+    
+  }
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--whiteColorDeam);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(2,15,29,0.904);
+    justify-content: space-between;
+    .logo{
+        color: black;
+        .icon{
+            color: var(--PrimaryColor);
+            transform: translateY(4px);
+        }
+    }
+    .closeNavigate{
+        .icon{
+            color: var(--PrimaryColor);
+        }
+        & :hover.icon {
+            color: red;
+        }
+    }    
+    @media screen and (max-width:750px){
+        .logoDiv{
+            height: 4rem;
+            padding: .5rem 1.5rem;
+        }
+        .navigateBar{
+            position: absolute;
+            background: var(--whiteColorDeam);
+            height: max-content;
+            width: 30%;
+            top: -500rem;
+            left: 50%;
+            border-radius: 16px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(2,15,29,0.904);
+            transform: translate(-50%);
+            z-index: 100;
+            transition: 0.3s ease-in-out;
+            .navigateLists{
+                flex-direction: column;
+                margin: auto;
+                width: 100%;
+                padding: 5%;
+                .navigateItem{
+                    padding: 3%;
+                    .navigateLink{
+                        color: var(--textColor);
+                        font-size: medium;
+                        font-weight: 700;
+                        &:hover{
+                            color: var(--PrimaryColor);
+                        }
+                    }
+                }
+                .button{
+                    margin-top: 10%;
+                    a{
+                        font-size: medium;
+                        font-weight: 800;
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+
+        .openNavBar{
+            top:5rem;
+        }
+        .closeNavigate{
+            .icon{
+                position: absolute;
+                top: 0.4rem;
+                right: 1rem;
+                color: var(--PrimaryColor);
+            }
+            & :hover {
+                color: red;
+            }
+        }
+    }
+    @media screen and (max-width:480px) {
+        .navigateBar{
+            width: 40%;
+        }
+        .closeNavigate{
+            .icon{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .toggleNavBar{
+        .icon{
+            color: var(--PrimaryColor);
+        }
+        &:hover.icon{
+            color: var(--SecondaryColor);
+        }
+    }
+}
+@media screen and (min-width:749px) {
+    .toggleNavBar,.closeNavigate{
+        display: none;
+    }
+    .header{
+        padding: 1rem 2rem;
+        .navigateBar{
+            .navigateLists{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                .navigateItem{
+                    .navigateLink{
+                        color: var(--textColor);
+                        font-weight: 500;
+                        padding: 0 .2rem;
+                        &:hover{
+                            color: var(--PrimaryColor);
+                        }
+                    }
+                }
+                .button{
+                    margin-left: 1rem;
+                    a{
+                        color: var(--whiteColor);
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:920px) {
+    .header{
+        .navigateBar{
+            .navigateLists{
+                .navigateItem{
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:1240px){
+    .header{
+        padding: 1rem 8.5rem;
+    }
+}

@@ -1,0 +1,129 @@
+:root{
+    --PrimaryColor:hsl(187, 63%, 34%);
+    --SecondaryColor:hsl(180, 85%, 55%);
+    --gradientColor:linear-gradient(to right,hsl(180, 85%, 55%),hsl(179, 99%, 33%));
+    --whiteColor:hsl(0,0%,100%);
+    --blackColor:hsl(200, 75%, 2%);
+    --textColor:hsl(240,4%,36%);
+    --whiteColorDeam:hsl(0, 0%, 90%);
+    --greyText:rgb(190,190,190);
+    --inputColor:rgb(218, 217, 217);
+    --bodyColor:rgb(243,243,243);
+    --cardBG:rgb(225, 225, 235);
+    --cardHover:rgb(255,255,255);
+  }
+
+  .main{
+    width: 100%;
+    .sectionTitle{
+        .title{
+            position: relative;
+            width: max-content;
+            color: var(--textColor);
+            margin: 1rem 0;
+            z-index: 2;
+            &::after{
+                position: absolute;
+                content: '';
+                background: var(--SecondaryColor);
+                height: 5px;
+                width: 110px;
+                right: 0;
+                bottom: -1px;
+                z-index: -1;
+            }
+        }
+    }
+    .sectionContent{
+        justify-content: center;
+        gap:1.5rem;
+        .singleDestination{
+            height: 100%;
+            display: grid;
+            row-gap: 10px;
+            //padding: 1rem;
+            border-radius: 20px;
+            align-items: center;
+            background: var(--cardBG);
+            box-shadow: 0 10px 10px rgba(99, 99, 108, 0.549);
+            overflow: hidden;
+            &:hover{
+                background: var(--cardHover);
+                box-shadow: 0 20px 20px rgba(106, 106, 128, 0.549);
+                transition: .3s ease;
+            }
+            .imageDiv{
+                height: 220px;
+                width: 100%;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: 2s ease;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            .cardInfo{
+                padding: 1rem;
+                .desTitle{
+                    color: var(--blackColor);
+                    font-size: 1rem;
+                }
+                .containent{
+                    gap: .5rem;
+                    .icon{
+                        color: var(--textColor);
+                        font-size: 15px;
+                    }
+                    .name{
+                        color: var(--textColor);
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                    
+                }
+            }
+            .fees{
+                width: 100%;
+                padding: .5rem;
+                margin: 1rem 0;
+                border-top: 1.5px solid var(--greyText);
+                border-bottom: 1.5px solid var(--greyText);
+                .price{
+                    font-size: 1.5rem;
+                }
+            }
+            .desc{
+                font-size: 13.5px;
+                color: var(--textColor);
+                font-weight: 500;
+            }
+        }
+        .button{
+            margin-top: 1rem;
+            color: var(--whiteColor);
+            font-weight: 600;
+            height: 2rem;
+            justify-content: space-between;
+            gap: .5rem;
+            .icon{
+                font-size: 1.2rem;
+            }
+        }
+    }
+  }
+  @media screen and (min-width:490px){
+    .sectionContent{
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media screen and (min-width:850px){
+    .sectionContent{
+        grid-template-columns: repeat(3,1fr);
+    }
+  }

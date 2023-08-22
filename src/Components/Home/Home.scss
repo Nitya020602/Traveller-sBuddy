@@ -1,0 +1,195 @@
+:root{
+    --PrimaryColor:hsl(187, 63%, 34%);
+    --SecondaryColor:hsl(180, 85%, 55%);
+    --gradientColor:linear-gradient(to right,hsl(180, 85%, 55%),hsl(179, 99%, 33%));
+    --whiteColor:hsl(0,0%,100%);
+    --blackColor:hsl(200, 75%, 2%);
+    --textColor:hsl(240,4%,36%);
+    --whiteColorDeam:hsl(0, 0%, 90%);
+    --greyText:rgb(190,190,190);
+    --inputColor:rgb(218, 217, 217);
+    --bodyColor:rgb(243,243,243);
+    --cardBG:rgb(225,225,235);
+    
+  }
+
+.home{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    .backVideo{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        background: rgb(30, 80, 98);
+        z-index: 1;
+        mix-blend-mode: hard-light;
+    }
+    video{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+    }
+    .homeContents{
+        width: 100%;
+        height: max-content;
+        padding: 10rem 1.5rem 3rem;
+        display: flex;
+        row-gap: 3rem;
+        flex-direction: column;
+        align-items: stretch;
+        margin: auto;
+        color: var(--whiteColor);
+        z-index: 100;
+        .textContainer{
+            padding: 3rem 0;
+            .sText{
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+            .titleHome{
+                font-size: 2.5rem;
+                font-weight: 900;
+            }
+        }
+        .cardDiv{
+            position: relative;
+            padding: 2rem 1rem;
+            background: var(--whiteColor);
+            border-radius: 10px;
+            gap:1rem;
+            label{
+                display: block;
+                color: var(--textColor);
+                padding-bottom: 10px;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .label_total{
+                justify-content: space-between;
+                align-items: center;
+                .total{
+                    color: var(--textColor);
+                    font-size: 18px;
+                    padding-bottom: 8px;
+                }
+            }
+            .input{
+                height: 30px;
+                padding: 0 1rem;
+                background: var(--inputColor);
+                border-radius: 1rem;
+                input{
+                    background: none;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    font-size: 13px;
+                    font-weight: 400;
+                    &::placeholder{
+                        font-size: 13px;
+                    }   
+                }
+            }
+            .icon{
+                font-size: 20px;
+                // color: var(--PrimaryColor)
+                // !important;
+                margin-left: 10px;
+            }
+        }
+        .searchOptions{
+            position: absolute;
+            background: var(--gradientColor);
+            width: max-content;
+            bottom: -0.7rem;
+            column-gap: .8rem;
+            padding: 5px 1rem;
+            border-radius: 3rem;
+            left: 50%;
+            transform: translate(-50%);
+            justify-content: center;
+            cursor: pointer;
+            &:hover{
+                background: var(--PrimaryColor);
+            }
+            .icon{
+                font-size: 20px;
+            }
+            span{
+                font-size: 13px;
+            }
+        }
+        .homeFooter{
+            width: 100%;
+            justify-content: space-between;
+            .icon{
+                font-size: 20px;
+                margin: 0 5px;
+                font-weight: 500;
+                &:hover{
+                    color: var(--PrimaryColor);
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:500px){
+    .home{
+
+        .homeContents{
+            .textContainer{
+                padding: 1rem 0 2rem 0;
+                .sText{
+                    font-size: 1rem;
+                }
+                .titleHome{
+                    position: relative;
+                    font-size: 2.5rem;
+                    width: max-content;
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        background: var(--SecondaryColor);
+                        height: 5px;
+                        width: 220px;
+                        right: 0px;
+                        bottom: 5px;
+                        z-index: -1;
+                    }
+                }
+            }
+            .cardDiv{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+    }
+}
+@media screen and (min-width:750px){
+    .home{
+        .homeContents{
+            .cardDiv{
+                margin: 0 1rem;
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+}
+@media screen and (min-width:870px){
+    .home{
+        .homeContents{
+            .textContainer{
+                padding: 6rem 0 4rem 0;
+            }
+        }
+    }
+}
